@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1037488144326",
+    "firebase_url": "https://clopirox-f818e.firebaseio.com",
+    "project_id": "clopirox-f818e",
+    "storage_bucket": "clopirox-f818e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037488144326:android:7bc1a7eeb8a59d7f",
+        "android_client_info": {
+          "package_name": "com.example.loginsignupdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037488144326-5s9lel641uac83ipf2vcgbpns30dvij4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.loginsignupdemo",
+            "certificate_hash": "72752b527debc3f1427665cb9ff584dcd3bc0931"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4vv_2xC6yUrmFQL-9qCwSG6MkaGXJqPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037488144326-i74e6g736mcm3fg4d0j434la2vg7fret.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037488144326:android:28c1e4948bd4acb0",
+        "android_client_info": {
+          "package_name": "com.kingscoder.clopirox_without_signup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4vv_2xC6yUrmFQL-9qCwSG6MkaGXJqPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037488144326-i74e6g736mcm3fg4d0j434la2vg7fret.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
