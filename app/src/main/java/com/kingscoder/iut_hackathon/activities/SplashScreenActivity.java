@@ -1,4 +1,4 @@
-package com.kingscoder.clopirox_without_signup;
+package com.kingscoder.iut_hackathon.activities;
 
 import android.content.Intent;
 import android.os.SystemClock;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.kingscoder.iut_hackathon.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

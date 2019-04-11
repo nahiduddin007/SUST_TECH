@@ -1,4 +1,4 @@
-package com.kingscoder.clopirox_without_signup;
+package com.kingscoder.iut_hackathon.fragments;
 
 
 import android.content.Intent;
@@ -28,6 +28,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.kingscoder.iut_hackathon.activities.MainActivity;
+import com.kingscoder.iut_hackathon.R;
 
 
 /**
@@ -40,7 +42,6 @@ public class SignInFragment extends Fragment {
     private View rootView;
     private FrameLayout parentFrameLayout;
     private EditText emailET, passET;
-    private ImageButton closeIB;
     private Button signInButton;
     private FirebaseAuth mFirebaseAuth;
     private ProgressBar progressBar;
@@ -69,7 +70,6 @@ public class SignInFragment extends Fragment {
         parentFrameLayout = getActivity().findViewById(R.id.register_frame_layout);
         emailET = rootView.findViewById(R.id.signin_email_editext);
         passET = rootView.findViewById(R.id.signin_password);
-        closeIB = rootView.findViewById(R.id.signin_close_image_button);
         signInButton = rootView.findViewById(R.id.signin_button);
         progressBar = rootView.findViewById(R.id.signin_progressbar);
         forgotPassTV = rootView.findViewById(R.id.forgot_password_textview);
@@ -94,12 +94,6 @@ public class SignInFragment extends Fragment {
             }
         });
 
-        closeIB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendToMainActivity();
-            }
-        });
 
         emailET.addTextChangedListener(new TextWatcher() {
             @Override

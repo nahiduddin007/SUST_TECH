@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kingscoder.clopirox_without_signup">
+    package="com.kingscoder.iut_hackathon">
 
     <application
         android:allowBackup="true"
@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.kingscoder.clopirox_without_signup.MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.kingscoder.clopirox_without_signup.RegisterActivity"
+            android:name=".activities.RegisterActivity"
             android:theme="@style/SplashScreenTheme" />
         <activity
-            android:name="com.kingscoder.clopirox_without_signup.SplashScreenActivity"
+            android:name=".activities.SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

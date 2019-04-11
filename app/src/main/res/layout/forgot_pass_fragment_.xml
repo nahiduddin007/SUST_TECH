@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ForgotPassFragment"
-    android:background="@color/colorPrimaryDark">
+    tools:context=".fragments.ForgotPassFragment"
+    android:background="@color/colorPrimary">
 
 
     <ImageView
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/clo"
+        android:src="@drawable/too"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,30 +52,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_email_textview" />
 
-    <EditText
-        android:id="@+id/reset_email.edittext"
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/colorAccent"
-        android:ems="10"
-        android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
-        android:drawablePadding="8dp"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:textColorHint="@color/soft_black"
-        android:textColor="@color/colorAccent"
-        android:hint="Email your registered email"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.07999998" />
+        tools:ignore="MissingConstraints">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/reset_email_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/soft_black"
+            android:drawableRight="@drawable/ic_mail_outline_black_24dp"
+            android:drawablePadding="8dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/soft_black"
+            android:textSize="20sp" />
+    </android.support.design.widget.TextInputLayout>
+
+
 
     <Button
         android:id="@+id/reset_pass_button"
@@ -84,7 +89,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/red_bold"
+        android:background="@color/colorPrimaryDark"
         android:enabled="false"
         android:text="Reset Password"
         android:textAllCaps="false"
@@ -92,7 +97,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reset_email.edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <TextView
         android:id="@+id/result_textview"
@@ -133,13 +138,14 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/reset_pass_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reset_email.edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
 </android.support.constraint.ConstraintLayout>

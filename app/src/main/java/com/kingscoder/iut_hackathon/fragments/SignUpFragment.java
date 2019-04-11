@@ -1,4 +1,4 @@
-package com.kingscoder.clopirox_without_signup;
+package com.kingscoder.iut_hackathon.fragments;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -27,9 +27,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.kingscoder.iut_hackathon.activities.MainActivity;
+import com.kingscoder.iut_hackathon.R;
+import com.kingscoder.iut_hackathon.model.User;
 
 
 public class SignUpFragment extends Fragment {
@@ -37,12 +37,11 @@ public class SignUpFragment extends Fragment {
     private TextView alreadyHaveAccTV;
     private FrameLayout parentFrameLayout;
     private View rootView;
-    private EditText emailET, fullNameET, passET, confirmPassET;
+    private EditText emailET, firstNameET, passET, confirmPassET, lastNameET;
     private Button signUpButton, signUpWithGoogleButton;
     private FirebaseAuth mFirebaseAuth;
     private ProgressBar mProgressBar;
     private FirebaseFirestore mFireStore;
-    private ImageButton closeIB;
 
 
     public SignUpFragment(){
@@ -65,14 +64,14 @@ public class SignUpFragment extends Fragment {
 
         alreadyHaveAccTV = rootView.findViewById(R.id.already_have_account_textview);
         parentFrameLayout = getActivity().findViewById(R.id.register_frame_layout);
-        emailET = rootView.findViewById(R.id.signin_email_editext);
-        fullNameET = rootView.findViewById(R.id.full_name_editext);
-        passET = rootView.findViewById(R.id.signin_password);
+        emailET = rootView.findViewById(R.id.signup_email_editext);
+        firstNameET = rootView.findViewById(R.id.signup_first_name_edittext);
+        lastNameET = rootView.findViewById(R.id.signup_last_name_edittext);
+        passET = rootView.findViewById(R.id.signup_password);
         confirmPassET = rootView.findViewById(R.id.signup_confirm_password);
         signUpButton = rootView.findViewById(R.id.signup_button);
 //        signUpWithGoogleButton = rootView.findViewById(R.id.signup_with_google_button);
-        mProgressBar = rootView.findViewById(R.id.progressBar);
-        closeIB = rootView.findViewById(R.id.signup_close_image_button);
+        mProgressBar = rootView.findViewById(R.id.signup_progressBar);
     }
 
     @Override
@@ -86,13 +85,38 @@ public class SignUpFragment extends Fragment {
             }
         });
 
-        closeIB.setOnClickListener(new View.OnClickListener() {
+        firstNameET.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
-                sendToMainActivity();
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkInputs();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
+        lastNameET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkInputs();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         emailET.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -172,13 +196,6 @@ public class SignUpFragment extends Fragment {
                 createNewAccountWithEmailPass();
             }
         });
-//
-//        signUpWithGoogleButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//               createNewAccountWithGoogle();
-//            }
-//        });
 
     }
 
@@ -207,7 +224,7 @@ public class SignUpFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                   User user = new User(fullNameET.getText().toString(), email);
+                   User user = new User(firstNameET.getText().toString(),lastNameET.getText().toString(), email);
 
                     mFireStore.collection("USERS").document(mFirebaseAuth.getUid()).set(user)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -245,16 +262,21 @@ public class SignUpFragment extends Fragment {
 
     private void checkInputs() {
         if (!TextUtils.isEmpty(emailET.getText())){
-            if (!TextUtils.isEmpty(fullNameET.getText())){
-                if (!TextUtils.isEmpty(passET.getText()) && !(passET.getText().toString().length() <6 )){
-                    if (!TextUtils.isEmpty(confirmPassET.getText())){
-                        signUpButton.setEnabled(true);
-                        signUpButton.setTextColor(Color.rgb( 255,255, 255));
-                    }else {
+            if (!TextUtils.isEmpty(firstNameET.getText())) {
+                if (!TextUtils.isEmpty(lastNameET.getText())) {
+                    if (!TextUtils.isEmpty(passET.getText()) && !(passET.getText().toString().length() < 6)) {
+                        if (!TextUtils.isEmpty(confirmPassET.getText())) {
+                            signUpButton.setEnabled(true);
+                            signUpButton.setTextColor(Color.rgb(255, 255, 255));
+                        } else {
+                            signUpButton.setEnabled(false);
+                            signUpButton.setTextColor(Color.argb(50, 255, 255, 255));
+                        }
+                    } else {
                         signUpButton.setEnabled(false);
                         signUpButton.setTextColor(Color.argb(50, 255, 255, 255));
                     }
-                }else {
+                } else {
                     signUpButton.setEnabled(false);
                     signUpButton.setTextColor(Color.argb(50, 255, 255, 255));
                 }

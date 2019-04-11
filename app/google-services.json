@@ -1,38 +1,34 @@
 {
   "project_info": {
-    "project_number": "1037488144326",
-    "firebase_url": "https://clopirox-f818e.firebaseio.com",
-    "project_id": "clopirox-f818e",
-    "storage_bucket": "clopirox-f818e.appspot.com"
+    "project_number": "577510908209",
+    "firebase_url": "https://hackathon-f2c8f.firebaseio.com",
+    "project_id": "hackathon-f2c8f",
+    "storage_bucket": "hackathon-f2c8f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1037488144326:android:7bc1a7eeb8a59d7f",
+        "mobilesdk_app_id": "1:577510908209:android:28c1e4948bd4acb0",
         "android_client_info": {
-          "package_name": "com.example.loginsignupdemo"
+          "package_name": "com.kingscoder.clopirox_without_signup"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1037488144326-5s9lel641uac83ipf2vcgbpns30dvij4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.loginsignupdemo",
-            "certificate_hash": "72752b527debc3f1427665cb9ff584dcd3bc0931"
-          }
+          "client_id": "577510908209-728ieo9l65d4ogpt70ji7v0b64vkeku2.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB4vv_2xC6yUrmFQL-9qCwSG6MkaGXJqPU"
+          "current_key": "AIzaSyC9aSWtvqAKUKaBtthQOjPd0xdeHU4aPgw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1037488144326-i74e6g736mcm3fg4d0j434la2vg7fret.apps.googleusercontent.com",
+              "client_id": "577510908209-728ieo9l65d4ogpt70ji7v0b64vkeku2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -41,22 +37,27 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1037488144326:android:28c1e4948bd4acb0",
+        "mobilesdk_app_id": "1:577510908209:android:2059e76fb5bbda5e",
         "android_client_info": {
-          "package_name": "com.kingscoder.clopirox_without_signup"
+          "package_name": "com.kingscoder.iut_hackathon.activities"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "577510908209-728ieo9l65d4ogpt70ji7v0b64vkeku2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyB4vv_2xC6yUrmFQL-9qCwSG6MkaGXJqPU"
+          "current_key": "AIzaSyC9aSWtvqAKUKaBtthQOjPd0xdeHU4aPgw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1037488144326-i74e6g736mcm3fg4d0j434la2vg7fret.apps.googleusercontent.com",
+              "client_id": "577510908209-728ieo9l65d4ogpt70ji7v0b64vkeku2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

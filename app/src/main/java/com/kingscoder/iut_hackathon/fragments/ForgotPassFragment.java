@@ -1,4 +1,4 @@
-package com.kingscoder.clopirox_without_signup;
+package com.kingscoder.iut_hackathon.fragments;
 
 
 import android.graphics.Color;
@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.kingscoder.iut_hackathon.R;
 
 
 /**

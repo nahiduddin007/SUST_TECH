@@ -1,4 +1,4 @@
-package com.kingscoder.clopirox_without_signup;
+package com.kingscoder.iut_hackathon;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

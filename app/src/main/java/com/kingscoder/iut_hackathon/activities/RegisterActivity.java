@@ -1,4 +1,4 @@
-package com.kingscoder.clopirox_without_signup;
+package com.kingscoder.iut_hackathon.activities;
 
 
 import android.support.v4.app.Fragment;
@@ -6,6 +6,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
+
+import com.kingscoder.iut_hackathon.R;
+import com.kingscoder.iut_hackathon.fragments.SignInFragment;
 
 public class RegisterActivity extends AppCompatActivity {
 
