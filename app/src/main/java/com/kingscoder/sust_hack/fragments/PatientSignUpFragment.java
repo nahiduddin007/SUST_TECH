@@ -26,7 +26,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.kingscoder.sust_hack.activities.MainActivity;
+import com.kingscoder.sust_hack.activities.PatientMainActivity;
 import com.kingscoder.sust_hack.R;
 import com.kingscoder.sust_hack.model.Patient;
 
@@ -231,7 +231,9 @@ public class PatientSignUpFragment extends Fragment {
                 if (task.isSuccessful()){
                    Patient patient = new Patient(firstNameET.getText().toString(),lastNameET.getText().toString(), email);
 
-                    mFireStore.collection("USERS").document(mFirebaseAuth.getUid()).set(patient)
+                    mFireStore.collection("USERS").document("PATIENTS")
+                            .collection("ALL").document(mFirebaseAuth.getUid())
+                            .set(patient)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -260,7 +262,7 @@ public class PatientSignUpFragment extends Fragment {
     }
 
     private void sendToMainActivity(){
-        Intent intent = new Intent(getActivity(), MainActivity.class);
+        Intent intent = new Intent(getActivity(), PatientMainActivity.class);
         startActivity(intent);
         getActivity().finish();
     }

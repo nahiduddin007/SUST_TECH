@@ -9,15 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.AppointmentListActivity"></activity>
+        <activity android:name=".activities.DoctorDetailsActivity" />
         <activity
-            android:name="com.kingscoder.sust_hack.activities.MainActivity"
+            android:name=".activities.HospitalMainActivity"
+            android:label="@string/title_activity_hospital_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.DoctorMainActivity"
+            android:label="@string/title_activity_doctor_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.AllDoctorActivity" />
+        <activity android:name=".activities.EditProfileActivity" />
+        <activity
+            android:name=".activities.PatientMainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.kingscoder.sust_hack.activities.RegisterActivity"
+            android:name=".activities.RegisterActivity"
             android:theme="@style/SplashScreenTheme" />
         <activity
-            android:name="com.kingscoder.sust_hack.activities.SplashScreenActivity"
+            android:name=".activities.SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

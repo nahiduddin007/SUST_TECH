@@ -7,6 +7,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,14 +25,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.kingscoder.sust_hack.R;
 import com.kingscoder.sust_hack.model.Patient;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class PatientMainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
 
     private FirebaseAuth mFirebaseAuth;
     private ImageView userImageView;
     private FirebaseUser currentUser;
     private TextView userEmailTV, userFullNameTV, userNameTV, userMailTV;
     private FirebaseFirestore mFireStore;
+    private CardView editProfileCV, doctorCV;
 
 
     @Override
@@ -61,24 +63,16 @@ public class MainActivity extends AppCompatActivity
         userFullNameTV = headerView.findViewById(R.id.user_full_name_main_textview_navigation);
         userEmailTV = headerView.findViewById(R.id.user_email_textview_navigation);
 
+        editProfileCV = findViewById(R.id.profile_cardview);
+        doctorCV = findViewById(R.id.doctor_cardview);
 
         if (currentUser.getPhotoUrl() != null){
             Glide.with(this).load(currentUser.getPhotoUrl()).into(userImageView);
         }
 
-        DocumentReference docRef = mFireStore.collection("USERS").document(currentUser.getUid());
-        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Patient patient = documentSnapshot.toObject(Patient.class);
-                String name = patient.getFirstName()+ " "+ patient.getLastName();
-                userFullNameTV.setText(name);
-            }
-        });
 
-        if (currentUser.getEmail() != null){
-            userEmailTV.setText(currentUser.getEmail());
-        }
+        editProfileCV.setOnClickListener(this);
+        doctorCV.setOnClickListener(this);
 
     }
 
@@ -149,5 +143,41 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()){
+            case R.id.profile_cardview:
+                intent = new Intent(getApplicationContext(), EditProfileActivity.class);
+                startActivity(intent);
+                break;
+                case R.id.doctor_cardview:
+                intent = new Intent(getApplicationContext(), AllDoctorActivity.class);
+                startActivity(intent);
+                break;
+
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        DocumentReference docRef =  mFireStore.collection("USERS").document("PATIENTS")
+                .collection("ALL").document(mFirebaseAuth.getUid());
+        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Patient patient = documentSnapshot.toObject(Patient.class);
+                String name = patient.getFirstName()+ " "+ patient.getLastName();
+                userFullNameTV.setText(name);
+            }
+        });
+
+        if (currentUser.getEmail() != null){
+            userEmailTV.setText(currentUser.getEmail());
+        }
+
     }
 }

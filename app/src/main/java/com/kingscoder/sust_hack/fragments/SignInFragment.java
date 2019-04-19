@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,7 +28,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.kingscoder.sust_hack.activities.MainActivity;
+import com.kingscoder.sust_hack.activities.DoctorMainActivity;
+import com.kingscoder.sust_hack.activities.PatientMainActivity;
 import com.kingscoder.sust_hack.R;
 
 
@@ -45,6 +47,7 @@ public class SignInFragment extends Fragment {
     private FirebaseAuth mFirebaseAuth;
     private ProgressBar progressBar;
     private FirebaseFirestore mFireStore;
+    private RadioGroup roleRG;
 
     public SignInFragment() {
         // Required empty public constructor
@@ -72,6 +75,7 @@ public class SignInFragment extends Fragment {
         signInButton = rootView.findViewById(R.id.signin_button);
         progressBar = rootView.findViewById(R.id.signin_progressbar);
         forgotPassTV = rootView.findViewById(R.id.forgot_password_textview);
+        roleRG = rootView.findViewById(R.id.roleRadioGroup);
 
     }
 
@@ -148,12 +152,22 @@ public class SignInFragment extends Fragment {
         signInButton.setEnabled(false);
         signInButton.setTextColor(Color.argb(50, 255, 255, 255));
 
+
+
+
         mFirebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
 
-                    sendToMainActivity();
+                    if (roleRG.getCheckedRadioButtonId() == R.id.patientRB){
+                        sendToPatientMainActivity();
+                    } else if (roleRG.getCheckedRadioButtonId() == R.id.doctorRB){
+                        sendToDoctorMainActivity();
+                    } else if (roleRG.getCheckedRadioButtonId() == R.id.hospitalRB){
+                        sendToHospitalMainActivity();
+                    }
+
                 } else {
                     progressBar.setVisibility(View.INVISIBLE);
                     signInButton.setEnabled(true);
@@ -161,11 +175,23 @@ public class SignInFragment extends Fragment {
                     Log.e("Firebase : ", task.getException().getMessage());
                 }
             }
+
+            private void sendToDoctorMainActivity() {
+                Intent intent = new Intent(getActivity(), DoctorMainActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+
+            private void sendToHospitalMainActivity() {
+                Intent intent = new Intent(getActivity(), DoctorMainActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
         });
     }
 
-    private void sendToMainActivity() {
-        Intent intent = new Intent(getActivity(), MainActivity.class);
+    private void sendToPatientMainActivity() {
+        Intent intent = new Intent(getActivity(), PatientMainActivity.class);
         startActivity(intent);
         getActivity().finish();
     }

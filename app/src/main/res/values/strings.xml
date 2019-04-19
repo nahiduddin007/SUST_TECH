@@ -107,12 +107,11 @@
     </string>
 
 
-
-
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="home_fragment">Patient Fragment</string>
     <string name="sport_fragment">Doctor Fragment</string>
     <string name="movie_fragment">Hospital Fragment</string>
+    <string name="title_activity_doctor_main">DoctorMainActivity</string>
+    <string name="title_activity_hospital_main">HospitalMainActivity</string>
 
 </resources>
