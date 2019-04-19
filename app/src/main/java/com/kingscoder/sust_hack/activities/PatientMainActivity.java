@@ -24,6 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.kingscoder.sust_hack.R;
 import com.kingscoder.sust_hack.model.Patient;
+import com.kingscoder.sust_hack.textscanner.ScannerActivity;
 
 public class PatientMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , View.OnClickListener {
@@ -33,7 +34,7 @@ public class PatientMainActivity extends AppCompatActivity
     private FirebaseUser currentUser;
     private TextView userEmailTV, userFullNameTV, userNameTV, userMailTV;
     private FirebaseFirestore mFireStore;
-    private CardView editProfileCV, doctorCV;
+    private CardView editProfileCV, doctorCV, hospitalCV, nearbyCV, scannerCV;
 
 
     @Override
@@ -65,6 +66,9 @@ public class PatientMainActivity extends AppCompatActivity
 
         editProfileCV = findViewById(R.id.profile_cardview);
         doctorCV = findViewById(R.id.doctor_cardview);
+        hospitalCV = findViewById(R.id.hospital_cardview);
+        nearbyCV = findViewById(R.id.nearby_cardview);
+        scannerCV = findViewById(R.id.history_cardview);
 
         if (currentUser.getPhotoUrl() != null){
             Glide.with(this).load(currentUser.getPhotoUrl()).into(userImageView);
@@ -73,6 +77,9 @@ public class PatientMainActivity extends AppCompatActivity
 
         editProfileCV.setOnClickListener(this);
         doctorCV.setOnClickListener(this);
+        hospitalCV.setOnClickListener(this);
+        nearbyCV.setOnClickListener(this);
+        scannerCV.setOnClickListener(this);
 
     }
 
@@ -102,11 +109,15 @@ public class PatientMainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_notification){
-
+            sendNotification();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void sendNotification() {
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -157,7 +168,18 @@ public class PatientMainActivity extends AppCompatActivity
                 intent = new Intent(getApplicationContext(), AllDoctorActivity.class);
                 startActivity(intent);
                 break;
-
+            case R.id.hospital_cardview:
+                intent = new Intent(getApplicationContext(), AllHospitalActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nearby_cardview:
+                intent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.history_cardview:
+                intent = new Intent(getApplicationContext(), ScannerActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 

@@ -37,5 +37,11 @@ dependencies {
     implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    implementation 'com.rmtheis:tess-two:9.0.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.3.1'
+
 }
 apply plugin: 'com.google.gms.google-services'

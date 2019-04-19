@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kingscoder.sust_hack">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permisson.READ_GSERVICES"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +19,25 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.AppointmentListActivity"></activity>
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".activities.AllHospitalActivity"></activity>
+        <activity android:name=".activities.AppointmentListActivity" />
         <activity android:name=".activities.DoctorDetailsActivity" />
+        <activity
+            android:name=".textscanner.Binarization"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".textscanner.ScannerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".textscanner.Recognizer"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".activities.HospitalMainActivity"
             android:label="@string/title_activity_hospital_main"
@@ -20,7 +47,10 @@
             android:label="@string/title_activity_doctor_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.AllDoctorActivity" />
+        <activity android:name=".textscanner.CropAndRotate"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".activities.EditProfileActivity" />
+        <activity android:name=".activities.MapsActivity" />
         <activity
             android:name=".activities.PatientMainActivity"
             android:label="@string/title_activity_main"

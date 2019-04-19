@@ -2,6 +2,11 @@
     <string name="app_name">SUST HACK</string>
     <string name="dot">. . .</string>
 
+    <string name="upload_an_image">Upload an image</string>
+    <string name="camera">camera</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="forgot_your_password">Forgot your password?</string>
