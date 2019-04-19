@@ -1,4 +1,4 @@
-package com.kingscoder.iut_hackathon.fragments;
+package com.kingscoder.sust_hack.fragments;
 
 
 import android.graphics.Color;
@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.kingscoder.iut_hackathon.R;
+import com.kingscoder.sust_hack.R;
 
 
 /**

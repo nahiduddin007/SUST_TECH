@@ -1,4 +1,4 @@
-package com.kingscoder.iut_hackathon.fragments;
+package com.kingscoder.sust_hack.fragments;
 
 
 import android.content.Intent;
@@ -19,7 +19,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -28,8 +27,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.kingscoder.iut_hackathon.activities.MainActivity;
-import com.kingscoder.iut_hackathon.R;
+import com.kingscoder.sust_hack.activities.MainActivity;
+import com.kingscoder.sust_hack.R;
 
 
 /**

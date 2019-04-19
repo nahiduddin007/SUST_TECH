@@ -1,4 +1,4 @@
-package com.kingscoder.iut_hackathon.activities;
+package com.kingscoder.sust_hack.activities;
 
 import android.content.Intent;
 import android.os.SystemClock;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.kingscoder.iut_hackathon.R;
+import com.kingscoder.sust_hack.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

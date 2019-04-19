@@ -1,15 +1,15 @@
-package com.kingscoder.iut_hackathon.model;
+package com.kingscoder.sust_hack.model;
 
-public class User {
+public class Patient {
     private String firstName;
     private String lastName;
     private String email;
 
-    public User(){
+    public Patient(){
 
     }
 
-    public User(String firstName, String lastName, String email) {
+    public Patient(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

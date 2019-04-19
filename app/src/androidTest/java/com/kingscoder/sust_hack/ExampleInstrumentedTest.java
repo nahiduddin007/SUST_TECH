@@ -1,4 +1,4 @@
-package com.kingscoder.iut_hackathon;
+package com.kingscoder.sust_hack;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

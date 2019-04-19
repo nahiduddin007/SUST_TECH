@@ -1,4 +1,4 @@
-package com.kingscoder.iut_hackathon.activities;
+package com.kingscoder.sust_hack.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,8 +21,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.kingscoder.iut_hackathon.R;
-import com.kingscoder.iut_hackathon.model.User;
+import com.kingscoder.sust_hack.R;
+import com.kingscoder.sust_hack.model.Patient;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth mFirebaseAuth;
     private ImageView userImageView;
     private FirebaseUser currentUser;
-    private TextView userEmailTV, userFullNameTV;
+    private TextView userEmailTV, userFullNameTV, userNameTV, userMailTV;
     private FirebaseFirestore mFireStore;
 
 
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity
         userFullNameTV = headerView.findViewById(R.id.user_full_name_main_textview_navigation);
         userEmailTV = headerView.findViewById(R.id.user_email_textview_navigation);
 
+
         if (currentUser.getPhotoUrl() != null){
             Glide.with(this).load(currentUser.getPhotoUrl()).into(userImageView);
         }
@@ -69,8 +70,8 @@ public class MainActivity extends AppCompatActivity
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                User user = documentSnapshot.toObject(User.class);
-                String name = user.getFirstName()+ " "+user.getLastName();
+                Patient patient = documentSnapshot.toObject(Patient.class);
+                String name = patient.getFirstName()+ " "+ patient.getLastName();
                 userFullNameTV.setText(name);
             }
         });
@@ -106,13 +107,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.menu_search) {
-
-            return true;
-        } else if (id == R.id.menu_cart){
-
-            return true;
-        } else if (id == R.id.menu_notification){
+        if (id == R.id.menu_notification){
 
             return true;
         }

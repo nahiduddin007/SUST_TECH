@@ -1,4 +1,4 @@
-package com.kingscoder.iut_hackathon.activities;
+package com.kingscoder.sust_hack.activities;
 
 
 import android.support.v4.app.Fragment;
@@ -7,8 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
-import com.kingscoder.iut_hackathon.R;
-import com.kingscoder.iut_hackathon.fragments.SignInFragment;
+import com.kingscoder.sust_hack.R;
+import com.kingscoder.sust_hack.fragments.SignInFragment;
 
 public class RegisterActivity extends AppCompatActivity {
 

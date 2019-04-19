@@ -1,4 +1,4 @@
-package com.kingscoder.iut_hackathon;
+package com.kingscoder.sust_hack;
 
 import org.junit.Test;
 

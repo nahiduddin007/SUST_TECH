@@ -1,4 +1,4 @@
-package com.kingscoder.iut_hackathon.fragments;
+package com.kingscoder.sust_hack.fragments;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -27,12 +26,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.kingscoder.iut_hackathon.activities.MainActivity;
-import com.kingscoder.iut_hackathon.R;
-import com.kingscoder.iut_hackathon.model.User;
+import com.kingscoder.sust_hack.activities.MainActivity;
+import com.kingscoder.sust_hack.R;
+import com.kingscoder.sust_hack.model.Patient;
 
 
-public class SignUpFragment extends Fragment {
+public class PatientSignUpFragment extends Fragment {
 
     private TextView alreadyHaveAccTV;
     private FrameLayout parentFrameLayout;
@@ -44,15 +43,21 @@ public class SignUpFragment extends Fragment {
     private FirebaseFirestore mFireStore;
 
 
-    public SignUpFragment(){
+    public PatientSignUpFragment(){
 
+    }
+
+    public static Fragment newInstance()
+    {
+        PatientSignUpFragment myFragment = new PatientSignUpFragment();
+        return myFragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootView =  inflater.inflate(R.layout.fragment_sign_up, container, false);
+        rootView =  inflater.inflate(R.layout.fragment_patient_sign_up, container, false);
         initialization();
         return rootView;
     }
@@ -224,9 +229,9 @@ public class SignUpFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                   User user = new User(firstNameET.getText().toString(),lastNameET.getText().toString(), email);
+                   Patient patient = new Patient(firstNameET.getText().toString(),lastNameET.getText().toString(), email);
 
-                    mFireStore.collection("USERS").document(mFirebaseAuth.getUid()).set(user)
+                    mFireStore.collection("USERS").document(mFirebaseAuth.getUid()).set(patient)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

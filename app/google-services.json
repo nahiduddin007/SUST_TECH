@@ -1,63 +1,34 @@
 {
   "project_info": {
-    "project_number": "577510908209",
-    "firebase_url": "https://hackathon-f2c8f.firebaseio.com",
-    "project_id": "hackathon-f2c8f",
-    "storage_bucket": "hackathon-f2c8f.appspot.com"
+    "project_number": "904311640885",
+    "firebase_url": "https://susthack-942a8.firebaseio.com",
+    "project_id": "susthack-942a8",
+    "storage_bucket": "susthack-942a8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:577510908209:android:28c1e4948bd4acb0",
+        "mobilesdk_app_id": "1:904311640885:android:d7557df396af128b",
         "android_client_info": {
-          "package_name": "com.kingscoder.clopirox_without_signup"
+          "package_name": "com.kingscoder.sust_hack"
         }
       },
       "oauth_client": [
         {
-          "client_id": "577510908209-728ieo9l65d4ogpt70ji7v0b64vkeku2.apps.googleusercontent.com",
+          "client_id": "904311640885-6qm8uer2s6h0iird0vmmbri7o7da0jpb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9aSWtvqAKUKaBtthQOjPd0xdeHU4aPgw"
+          "current_key": "AIzaSyCgV8JFWKSHo3DrHlTR_aYiF4dU_RKoT3w"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "577510908209-728ieo9l65d4ogpt70ji7v0b64vkeku2.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:577510908209:android:2059e76fb5bbda5e",
-        "android_client_info": {
-          "package_name": "com.kingscoder.iut_hackathon.activities"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "577510908209-728ieo9l65d4ogpt70ji7v0b64vkeku2.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC9aSWtvqAKUKaBtthQOjPd0xdeHU4aPgw"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "577510908209-728ieo9l65d4ogpt70ji7v0b64vkeku2.apps.googleusercontent.com",
+              "client_id": "904311640885-6qm8uer2s6h0iird0vmmbri7o7da0jpb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
